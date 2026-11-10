@@ -2,10 +2,10 @@
 
 | Factory | File | Produces | Uniqueness guarantee |
 |---|---|---|---|
-| `UserFactory` | `src/data/factories/user.factory.ts` | A system-user account (username/password/role) for Admin > User Management | `username()` includes 10 random alphanumeric chars |
-| `EmployeeFactory` | `src/data/factories/employee.factory.ts` | A PIM employee (first/last name) | Fresh Faker name per call; disambiguated further by the generated username when one is attached |
-| `CandidateFactory` | `src/data/factories/candidate.factory.ts` | A Recruitment candidate (name, email) | Fresh Faker name + unique email per call |
-| `LeaveFactory` | `src/data/factories/leave.factory.ts` | A leave application (type, date range, comment) | Comment includes a unique token so the created request is identifiable in the list |
+| `UserFactory` | `src/data/factories/user.factory.ts` | A system-user account (username/password/role: ESS) for Admin > User Management | `CommonGenerator.username()`/`password()` |
+| `EmployeeFactory` | `src/data/factories/employee.factory.ts` | A PIM employee (first/last name) | Fresh Faker name per call |
+| `CandidateFactory` | `src/data/factories/candidate.factory.ts` | A Recruitment candidate (first/last name, email) | First name built from `CommonGenerator.username('candidate')` — not a plain Faker name — so the live Candidates search (first-name prefix match) always resolves to exactly one row, even with many duplicate Faker names already on the shared instance |
+| `LeaveFactory` | `src/data/factories/leave.factory.ts` | A leave application (from/to date, comment) | Comment includes a unique token so the created request is identifiable in "My Leave" |
 
 Add a row here in the same change that adds or removes a factory (see
 `docs/DOCUMENTATION_POLICY.md`).

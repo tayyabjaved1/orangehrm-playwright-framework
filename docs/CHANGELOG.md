@@ -2,6 +2,28 @@
 
 Notable framework changes are recorded here.
 
+## 0.2.0 - Full module coverage
+
+- Implemented the remaining 11 OrangeHRM modules: Admin, PIM, Leave, Time,
+  Recruitment, My Info, Performance, Directory, Maintenance, Claim, Buzz —
+  13 modules total alongside Auth and Dashboard, 14 scenarios.
+- Mutating modules (Admin, PIM, Leave, Recruitment) are self-cleaning:
+  create → verify → delete/cancel → verify-gone, all inside one test, per
+  `docs/ARCHITECTURE.md` §7.
+- Modules with no safe undo on this shared public instance (Time, My Info,
+  Performance, Maintenance, Claim, Buzz) are intentionally read-only, verifying
+  real page content rather than performing the mutating action. Maintenance in
+  particular stops at the Administrator Access credential gate and never
+  proceeds into the Purge Employee Records screen behind it.
+- Added `src/data/factories/{user,employee,candidate,leave}.factory.ts` and
+  matching `src/data/types/<module>.types.ts` files.
+- Fixed a real bug found by a clean full-suite run: `BuzzPage.expectFeedContentVisible()`
+  assumed the shared feed always has at least one post; it now accepts either a
+  real post or the newsfeed's own empty state, since the feed's content changes
+  with other users' activity on this shared instance.
+- Verified: `npm run typecheck` clean; two consecutive full-suite runs, 15/15
+  passing (14 spec tests + the auth `setup` project), against the live site.
+
 ## 0.1.0 - Initial framework
 
 - Scaffolded the framework: `core/` (env reader, `BasePage` readiness contract),
