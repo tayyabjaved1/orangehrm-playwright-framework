@@ -10,7 +10,7 @@ export class BuzzPage extends BasePage {
     await expect(this.breadcrumb('Buzz')).toBeVisible();
   }
 
-  /** Verifies the post composer is present without typing into or submitting it (this module is read-only, see README). */
+  /** Verifies the post composer is present without typing into or submitting it (this module is read-only, see docs/MODULE_CATALOG.md). */
   async expectPostComposerVisible(): Promise<void> {
     await expect(this.page.getByRole('textbox', { name: "What's on your mind?" })).toBeVisible();
     await expect(this.page.getByRole('button', { name: 'Post', exact: true })).toBeVisible();

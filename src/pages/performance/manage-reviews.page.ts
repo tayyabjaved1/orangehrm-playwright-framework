@@ -36,7 +36,7 @@ export class ManageReviewsPage extends BasePage {
   /**
    * The grid's empty-state message. The shared demo instance currently has no
    * performance reviews configured, so this is the real, falsifiable content
-   * rendered today (see module README "Known limitations").
+   * rendered today (see docs/MODULE_CATALOG.md's Performance section).
    * `.first()` because OrangeHRM renders a duplicate off-screen copy for its
    * responsive/mobile layout — both share the same accessible text.
    */

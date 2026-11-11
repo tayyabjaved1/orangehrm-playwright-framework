@@ -36,7 +36,7 @@ add(specsChanged && !hasAny('docs/TEST_CATALOG.md'), 'Spec changes require docs/
 add(specsChanged && !hasAny('docs/TRACEABILITY.md'), 'Spec changes require docs/TRACEABILITY.md.');
 add(factoriesChanged && !hasAny('docs/DATA_FACTORY_GUIDE.md'), 'Factory/generator/type changes require docs/DATA_FACTORY_GUIDE.md.');
 add(factoriesChanged && !hasAny('docs/FACTORY_CATALOG.md'), 'Factory/generator/type changes require docs/FACTORY_CATALOG.md.');
-add(moduleCodeChanged && !hasAny('docs/MODULE_CATALOG.md') && !changed.some((p) => /^src\/specs\/[^/]+\/README\.md$/.test(p)), 'Module changes require docs/MODULE_CATALOG.md or the affected module README.');
+add(moduleCodeChanged && !hasAny('docs/MODULE_CATALOG.md'), 'Module changes require docs/MODULE_CATALOG.md.');
 add(coreChanged && !hasAny('docs/ARCHITECTURE.md'), 'Core architecture changes require docs/ARCHITECTURE.md.');
 add(configChanged && !hasAny('README.md'), 'Configuration/CI/dependency changes require README.md.');
 add(configChanged && !hasAny('docs/CONFIGURATION.md'), 'Configuration/CI/dependency changes require docs/CONFIGURATION.md.');

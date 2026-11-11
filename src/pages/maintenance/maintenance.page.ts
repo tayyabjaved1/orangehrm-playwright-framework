@@ -9,7 +9,7 @@ import { BasePage } from '../../core/base-page';
  * directly on the Purge Employee Records page — a destructive action with no
  * safe alternative sub-page. Per `docs/ARCHITECTURE.md` §7, this module's
  * safe, read-only scope stops at verifying the gate itself; see this
- * module's README "Known limitations" for why.
+ * docs/MODULE_CATALOG.md's Maintenance section for why.
  */
 export class MaintenancePage extends BasePage {
   readonly path = '/web/index.php/maintenance/viewMaintenanceModule';

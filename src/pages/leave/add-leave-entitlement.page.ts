@@ -8,7 +8,7 @@ import { BasePage } from '../../core/base-page';
  * leave type** (verified live), so the self-service Apply Leave form renders no form at
  * all ("No Leave Types with Leave Balance") until a balance exists. This page is the
  * necessary precondition the Leave journey spec grants for its own employee before
- * applying — see the module README's "Known limitations" for detail.
+ * applying — see docs/MODULE_CATALOG.md's Leave section for detail.
  */
 export class AddLeaveEntitlementPage extends BasePage {
   readonly path = '/web/index.php/leave/addLeaveEntitlement';

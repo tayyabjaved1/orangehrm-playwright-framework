@@ -5,7 +5,7 @@ import { MaintenancePage } from '../../pages/maintenance/maintenance.page';
 // Read-only by design: Maintenance's only reachable destination past its
 // credential gate is Purge Employee Records, a destructive action with no
 // safe undo on this shared public instance. This journey stops at the gate
-// itself — see src/specs/maintenance/README.md "Known limitations".
+// itself — see docs/MODULE_CATALOG.md's Maintenance section.
 test.describe('Maintenance - Administrator Access Gate', { tag: ['@regression', '@ui'] }, () => {
   test('shows the administrator access confirmation gate for the authenticated admin, without proceeding into any purge action', async ({ page }) => {
     let maintenance: MaintenancePage;

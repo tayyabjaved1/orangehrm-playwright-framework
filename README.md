@@ -40,7 +40,7 @@ npm run report:allure     # render + open the Allure report (needs Java; see doc
   every module except Auth starts already authenticated.
 - `src/data/generators` + `src/data/factories` + `src/data/types`: fresh,
   collision-resistant runtime data for anything a spec creates.
-- `src/pages/<module>/` + `src/specs/<module>/{*.spec.ts,README.md}`: layer-first, one subfolder per OrangeHRM module in each layer.
+- `src/pages/<module>/` + `src/specs/<module>/*.spec.ts`: layer-first, one subfolder per OrangeHRM module in each layer. Module-level docs live centrally in `docs/MODULE_CATALOG.md`, not a per-module README.
 
 See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the full picture.
 
@@ -51,7 +51,8 @@ per-run tenant and no API to reset state. Every spec that creates data
 (Admin, PIM, Leave, Recruitment) deletes it again before the test ends. Modules
 where the only meaningful action has no safe undo (Buzz, Claim, Maintenance,
 Time, My Info, Performance) are intentionally **read-only**: each verifies its
-own page loads with real content, documented in that module's README. See
+own page loads with real content, documented in that module's section of
+[docs/MODULE_CATALOG.md](docs/MODULE_CATALOG.md). See
 [docs/ARCHITECTURE.md §7](docs/ARCHITECTURE.md#7-shared-instance-data-discipline--this-is-not-a-sandbox).
 
 ## License

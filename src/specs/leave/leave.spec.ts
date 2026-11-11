@@ -25,7 +25,7 @@ test.describe('Leave - Apply and Cancel Leave Request', { tag: ['@smoke', '@ui']
 
     // The live demo's Admin account carries zero leave balance for every leave type, so
     // Apply Leave renders no form at all until a balance exists (verified live) — grant
-    // one for the same employee before applying. See the module README for detail.
+    // one for the same employee before applying. See docs/MODULE_CATALOG.md's Leave section for detail.
     await test.step('Grant a leave entitlement for the current employee', async () => {
       await entitlement.open();
       await entitlement.grantEntitlementForFirstAvailableLeaveType(EMPLOYEE_NAME, 5);

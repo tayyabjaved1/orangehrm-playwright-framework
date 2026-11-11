@@ -2,6 +2,25 @@
 
 Notable framework changes are recorded here.
 
+## 0.3.1 - Centralized module docs (matching core-pw-e2e-tests)
+
+- Removed all 13 per-module `README.md` files. That pattern came from
+  demoqa-playwright-framework's own convention, not core-pw-e2e-tests, which
+  centralizes everything in a handful of `docs/*.md` files with no per-module
+  READMEs. Folded every module's content (scope, navigation, architecture,
+  test data, lifecycle, known limitations) into one section per module in
+  `docs/MODULE_CATALOG.md`, under its existing summary table.
+- Replaced `docs/templates/MODULE_README.template.md` with
+  `docs/templates/MODULE_SECTION.template.md` — a template for adding a new
+  module's section to `MODULE_CATALOG.md`, not a standalone file.
+- Updated every doc/code reference that pointed at a per-module README
+  (`docs/ARCHITECTURE.md`, `docs/DOCUMENTATION_POLICY.md`,
+  `docs/CHANGE_IMPACT_MATRIX.md`, `scripts/check-docs-changes.mjs`, `README.md`,
+  `CONTRIBUTING.md`, and inline code comments in 6 page objects/specs).
+- Verified: `npm run typecheck` clean; full suite 14/15 passing (the one
+  failure is the same pre-existing Leave-module live-site flakiness already
+  documented, unrelated to this change).
+
 ## 0.3.0 - Layer-first directory structure
 
 - Restructured from module-first (`src/modules/<module>/{pages,tests}`) to

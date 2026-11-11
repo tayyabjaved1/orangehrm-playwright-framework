@@ -35,8 +35,10 @@ core/         primitives — env reader, BasePage contract
   shape. Don't add to another module's type file — avoids file conflicts and
   keeps ownership obvious.
 - **`pages/<module>/`** — page objects extending `BasePage`.
-- **`specs/<module>/`** — specs, plus that module's `README.md` (see
-  `docs/templates/MODULE_README.template.md`).
+- **`specs/<module>/`** — specs. Module-level documentation (scope,
+  architecture, known limitations) lives centrally in `docs/MODULE_CATALOG.md`
+  (see `docs/templates/MODULE_SECTION.template.md`) — matching core-pw-e2e-tests'
+  approach, not a README per module.
 
 ## 3. Authentication: one real login, reused everywhere
 
@@ -107,8 +109,8 @@ Two rules follow directly from that:
   safe undo** (e.g. Buzz posts, submitted Claims, Maintenance's purge actions)
   stays **read-only** in this suite: verify the module's own page loads and its
   real content renders, and do not perform the mutating action. Document this
-  explicitly in that module's README under "Known limitations" — see
-  `docs/templates/MODULE_README.template.md`.
+  explicitly in that module's section of `docs/MODULE_CATALOG.md` under "Known
+  limitations" — see `docs/templates/MODULE_SECTION.template.md`.
 
 ## 8. Tags and spec structure
 
