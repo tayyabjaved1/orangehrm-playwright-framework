@@ -34,12 +34,12 @@ export default defineConfig({
     {
       // Auth module tests the login form itself, so they must not start pre-authenticated.
       name: 'chromium-auth',
-      testMatch: '**/modules/auth/**/*.spec.ts',
+      testMatch: '**/specs/auth/**/*.spec.ts',
       use: { ...devices['Desktop Chrome'] },
     },
     {
       name: 'chromium',
-      testIgnore: '**/modules/auth/**/*.spec.ts',
+      testIgnore: '**/specs/auth/**/*.spec.ts',
       use: { ...devices['Desktop Chrome'], storageState: 'playwright/.auth/admin.json' },
       dependencies: ['setup'],
     },

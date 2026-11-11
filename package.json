@@ -1,6 +1,6 @@
 {
   "name": "orangehrm-playwright-framework",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "license": "MIT",
   "description": "Playwright + TypeScript E2E framework for the OrangeHRM demo (https://opensource-demo.orangehrmlive.com)",

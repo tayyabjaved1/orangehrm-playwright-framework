@@ -87,7 +87,7 @@ test.describe('PIM - Add Employee', { tag: ['@regression', '@ui'] }, () => {
 
 ```bash
 npm run typecheck
-npx playwright test src/modules/<module>/tests
+npx playwright test src/specs/<module>
 ```
 
 Then the full suite once your module is in:

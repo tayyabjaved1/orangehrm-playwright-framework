@@ -34,7 +34,7 @@ Link to `docs/TEST_CATALOG.md` and list this module's scenarios, each with its
 
 ## Run
 ```bash
-npx playwright test src/modules/<module>/tests
+npx playwright test src/specs/<module>
 ```
 
 ## Known limitations

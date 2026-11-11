@@ -40,7 +40,7 @@ npm run report:allure     # render + open the Allure report (needs Java; see doc
   every module except Auth starts already authenticated.
 - `src/data/generators` + `src/data/factories` + `src/data/types`: fresh,
   collision-resistant runtime data for anything a spec creates.
-- `src/modules/<module>/{pages,tests,README.md}`: one folder per OrangeHRM module.
+- `src/pages/<module>/` + `src/specs/<module>/{*.spec.ts,README.md}`: layer-first, one subfolder per OrangeHRM module in each layer.
 
 See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the full picture.
 

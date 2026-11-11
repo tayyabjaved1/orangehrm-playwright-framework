@@ -15,7 +15,7 @@ credentials or URLs in a spec or page object.
 - **`testDir: './src'`** — specs, setup, pages, data all live under `src/`.
 - **Three projects**:
   - `setup` — runs `src/setup/auth.setup.ts`, logs in once, saves `storageState`.
-  - `chromium-auth` — the Auth module only (`**/modules/auth/**/*.spec.ts`), no
+  - `chromium-auth` — the Auth module only (`**/specs/auth/**/*.spec.ts`), no
     `storageState`, no dependency on `setup` — it exercises the real login form.
   - `chromium` — everything else, `storageState: 'playwright/.auth/admin.json'`,
     `dependencies: ['setup']` — starts already authenticated.

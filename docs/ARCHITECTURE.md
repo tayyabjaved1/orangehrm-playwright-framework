@@ -34,9 +34,9 @@ core/         primitives — env reader, BasePage contract
 - **`data/types/`** — one `<module>.types.ts` per module that needs its own data
   shape. Don't add to another module's type file — avoids file conflicts and
   keeps ownership obvious.
-- **`modules/<module>/pages/`** — page objects extending `BasePage`.
-- **`modules/<module>/tests/`** — specs.
-- **`modules/<module>/README.md`** — see `docs/templates/MODULE_README.template.md`.
+- **`pages/<module>/`** — page objects extending `BasePage`.
+- **`specs/<module>/`** — specs, plus that module's `README.md` (see
+  `docs/templates/MODULE_README.template.md`).
 
 ## 3. Authentication: one real login, reused everywhere
 

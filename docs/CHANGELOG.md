@@ -2,6 +2,26 @@
 
 Notable framework changes are recorded here.
 
+## 0.3.0 - Layer-first directory structure
+
+- Restructured from module-first (`src/modules/<module>/{pages,tests}`) to
+  layer-first (`src/pages/<module>/`, `src/specs/<module>/`), matching
+  core-pw-e2e-tests' actual directory convention — a single top-level folder
+  per layer, module as the subfolder inside it.
+- Each module's `README.md` now lives under `src/specs/<module>/` (every
+  module has specs; not every module has page objects).
+- `playwright.config.ts`'s `chromium-auth`/`chromium` project `testMatch`/
+  `testIgnore` patterns updated to `**/specs/auth/**/*.spec.ts`.
+- Updated every relative import (13 modules, ~45 files), `scripts/check-docs-changes.mjs`'s
+  path patterns, and all docs/READMEs referencing the old paths.
+- Migration: any external reference to `src/modules/<module>/pages` or
+  `src/modules/<module>/tests` must be updated to `src/pages/<module>` /
+  `src/specs/<module>` respectively.
+- Verified: `npm run typecheck` clean. Full suite runs showed the same
+  pre-existing live-site flakiness documented in §9 (different modules
+  failing on different runs, same error signatures as before this change) —
+  no new failures, no path/import-related breakage in any run.
+
 ## 0.2.0 - Full module coverage
 
 - Implemented the remaining 11 OrangeHRM modules: Admin, PIM, Leave, Time,

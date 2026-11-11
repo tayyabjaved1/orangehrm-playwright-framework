@@ -2,7 +2,7 @@
 
 1. Read `docs/ARCHITECTURE.md` and `docs/TEST_AUTHORING_GUIDE.md` first — this
    repo follows those conventions strictly, not as suggestions.
-2. One module per `src/modules/<module>/` folder: `pages/`, `tests/`, `README.md`.
+2. One module, two homes: `src/pages/<module>/` (page objects) and `src/specs/<module>/` (specs + that module's `README.md`).
 3. Every spec's tags use Playwright's native `{ tag: [...] }` option and every
    test is broken into named `test.step()`s — see the Test Authoring Guide.
 4. A spec that creates data on the shared demo instance must delete it before
