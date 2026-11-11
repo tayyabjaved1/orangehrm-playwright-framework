@@ -11,6 +11,9 @@
     "test:headed": "playwright test --headed",
     "test:debug": "playwright test --debug",
     "report": "playwright show-report",
+    "report:allure:generate": "allure generate allure-results --clean -o allure-report",
+    "report:allure:open": "allure open allure-report",
+    "report:allure": "npm run report:allure:generate && npm run report:allure:open",
     "typecheck": "tsc --noEmit",
     "install:browsers": "playwright install --with-deps chromium",
     "docs:check": "node scripts/check-docs-changes.mjs"
@@ -19,6 +22,8 @@
     "@faker-js/faker": "^9.9.0",
     "@playwright/test": "^1.56.1",
     "@types/node": "^22.15.30",
+    "allure-commandline": "^2.46.1",
+    "allure-playwright": "^3.14.0",
     "typescript": "^5.8.3"
   }
 }

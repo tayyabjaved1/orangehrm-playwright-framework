@@ -14,7 +14,11 @@ export default defineConfig({
   workers: process.env.CI ? 2 : undefined,
   timeout: 45_000,
   expect: { timeout: 10_000 },
-  reporter: [['list'], ['html', { outputFolder: 'playwright-report', open: 'never' }]],
+  reporter: [
+    ['list'],
+    ['html', { outputFolder: 'playwright-report', open: 'never' }],
+    ['allure-playwright', { outputFolder: 'allure-results', suiteTitle: false, detail: true }],
+  ],
   use: {
     baseURL,
     headless: process.env.HEADLESS !== 'false',

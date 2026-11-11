@@ -30,6 +30,7 @@ npm run test:regression   # @regression-tagged tests
 npm run typecheck         # TypeScript validation
 npm run docs:check        # enforce documentation updates for changed code
 npm run report            # open HTML report
+npm run report:allure     # render + open the Allure report (needs Java; see docs/CONFIGURATION.md)
 ```
 
 ## Architecture
